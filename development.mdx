@@ -1,79 +1,110 @@
 ---
 title: 'Desarrollo'
-description: 'Previsualiza los cambios localmente para actualizar tu documentación'
+description: 'Previsualiza y prueba los cambios de 4Patrol localmente'
 ---
 
 <Info>
-  **Requisito previo**: Por favor, instala Node.js (versión 19 o superior) antes de continuar. <br />
-  Actualiza a ```docs.json``` y elimina el archivo legado ```mint.json``` antes de proceder.
+  **Requisitos previos**: Asegúrate de tener instalado Node.js (v14), Flutter y MySQL 8 en tu sistema. Además, debes haber clonado los repositorios correspondientes y configurado tus archivos de entorno.
 </Info>
 
-Sigue estos pasos para instalar y ejecutar Mintlify en tu sistema operativo:
+Sigue estos pasos para configurar y ejecutar el entorno de desarrollo de 4Patrol:
 
-**Paso 1**: Instala Mintlify:
+## Panel Administrativo (Vue.js)
 
-<CodeGroup>
+<AccordionGroup>
+  <Accordion icon="github" title="Clona el repositorio del panel">
+    Clona el repositorio del panel administrativo de 4Patrol:
+    
+    ```bash
+    git clone https://github.com/tu-usuario/4patrol-admin.git
+    ```
+    
+    Luego, accede al directorio:
+    
+    ```bash
+    cd 4patrol-admin
+    ```
+  </Accordion>
+  <Accordion icon="code" title="Instala las dependencias">
+    Instala las dependencias necesarias ejecutando:
+    
+    ```bash
+    npm install
+    ```
+  </Accordion>
+  <Accordion icon="eye" title="Ejecuta el panel administrativo">
+    Inicia el servidor de desarrollo con:
+    
+    ```bash
+    npm run serve
+    ```
+    
+    La interfaz estará disponible en `http://localhost:8080` o en el puerto configurado.
+  </Accordion>
+</AccordionGroup>
 
-bash npm
-npm i -g mintlify
-bash
-Copiar
-yarn global add mintlify
-</CodeGroup>
-Paso 2: Navega al directorio de documentación (donde se encuentra el archivo docs.json) y ejecuta el siguiente comando:
+## Aplicación Móvil (Flutter)
 
-bash
-Copiar
-mintlify dev
-Una vista previa local de tu documentación estará disponible en http://localhost:3000.
+<AccordionGroup>
+  <Accordion icon="github" title="Clona el repositorio de la app móvil">
+    Clona el repositorio de la aplicación móvil de 4Patrol:
+    
+    ```bash
+    git clone https://github.com/tu-usuario/4patrol-mobile.git
+    ```
+    
+    Luego, navega al directorio:
+    
+    ```bash
+    cd 4patrol-mobile
+    ```
+  </Accordion>
+  <Accordion icon="code" title="Instala las dependencias de Flutter">
+    Instala las dependencias de Flutter con:
+    
+    ```bash
+    flutter pub get
+    ```
+  </Accordion>
+  <Accordion icon="mobile-alt" title="Ejecuta la aplicación móvil">
+    Inicia la aplicación en un emulador o dispositivo físico:
+    
+    ```bash
+    flutter run
+    ```
+  </Accordion>
+</AccordionGroup>
 
-Puertos Personalizados
-Por defecto, Mintlify utiliza el puerto 3000. Puedes personalizar el puerto en el que se ejecuta Mintlify usando el flag --port. Por ejemplo, para ejecutar Mintlify en el puerto 3333, utiliza este comando:
+## Backend (Node.js)
 
-bash
-Copiar
-mintlify dev --port 3333
-Si intentas ejecutar Mintlify en un puerto que ya está en uso, usará el siguiente puerto disponible:
-
-md
-Copiar
-El puerto 3000 ya está en uso. Se intentará con el 3001.
-Versiones de Mintlify
-Ten en cuenta que cada lanzamiento de la CLI está asociado a una versión específica de Mintlify. Si tu sitio local no coincide con la versión de producción, actualiza la CLI:
-
-<CodeGroup>
-bash
-Copiar
-npm i -g mintlify@latest
-bash
-Copiar
-yarn global upgrade mintlify
-</CodeGroup>
-Validación de Enlaces
-La CLI puede ayudarte a validar los enlaces de referencia en tu documentación. Para identificar enlaces rotos, utiliza el siguiente comando:
-
-bash
-Copiar
-mintlify broken-links
-Despliegue
-<Tip> Editores ilimitados disponibles en el [Plan Pro](https://mintlify.com/pricing) y superiores. </Tip>
-Si el despliegue es exitoso, deberías ver lo siguiente:
-
-<Frame> <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} /> </Frame>
-Formateo de Código
-Sugerimos utilizar extensiones en tu IDE para reconocer y formatear MDX. Si usas VSCode, considera la extensión MDX para VSCode para el resaltado de sintaxis, y Prettier para el formateo de código.
-
-Resolución de Problemas
-<AccordionGroup> <Accordion title='Error: No se pudo cargar el módulo "sharp" utilizando el runtime darwin-arm64'>
-markdown
-Copiar
-Esto puede deberse a una versión obsoleta de Node. Intenta lo siguiente:
-1. Elimina la versión actualmente instalada de Mintlify: `npm remove -g mintlify`
-2. Actualiza a Node v19 o superior.
-3. Reinstala Mintlify: `npm install -g mintlify`
-</Accordion> <Accordion title="Problema: Se encuentra un error desconocido">
-go
-Copiar
-Solución: Ve a la raíz de tu dispositivo y elimina la carpeta `~/.mintlify`. Después, ejecuta `mintlify dev` nuevamente.
-</Accordion> </AccordionGroup>
-¿Tienes curiosidad por saber qué cambió en la versión de la CLI? Consulta el registro de cambios de la CLI.
+<AccordionGroup>
+  <Accordion icon="github" title="Clona el repositorio del backend">
+    Clona el repositorio del backend de 4Patrol:
+    
+    ```bash
+    git clone https://github.com/tu-usuario/4patrol-backend.git
+    ```
+    
+    Luego, accede al directorio:
+    
+    ```bash
+    cd 4patrol-backend
+    ```
+  </Accordion>
+  <Accordion icon="code" title="Instala las dependencias del backend">
+    Instala las dependencias ejecutando:
+    
+    ```bash
+    npm install
+    ```
+  </Accordion>
+  <Accordion icon="server" title="Ejecuta el backend">
+    Inicia el servidor backend con:
+    
+    ```bash
+    node server.js
+    ```
+    
+    Asegúrate de tener correctamente configurado el archivo de entorno (por ejemplo, con las credenciales de MySQL).
+  </Accordion>
+</AccordionGroup>
