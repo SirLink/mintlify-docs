@@ -1,0 +1,79 @@
+---
+title: 'Detalles del Panel Administrativo'
+description: 'Conoce las rutas y funcionalidades del dashboard de 4Patrol'
+---
+
+El panel administrativo de 4Patrol se encuentra en [https://admin.4-patrol.com/](https://admin.4-patrol.com/) y permite gestionar de forma integral las operaciones y configuraciones del sistema. A continuación se detallan las rutas principales disponibles en el dashboard, junto con una breve descripción de cada sección.
+
+## Monitoreo en Vivo
+- **Ruta:** `/`
+- **Descripción:** Página principal que muestra el monitoreo en vivo de las operaciones.
+- **Componente:** `@/views/dashboard/monitoring`
+
+## Usuarios
+- **Ruta Base:** `/usuarios`
+- **Rutas Secundarias:**
+  - **Registrar Usuario:** `/usuarios/registrar`
+  - **Consultar Usuarios:** `/usuarios/consulta`
+  - **Editar Usuario:** `/usuarios/editar/:id` *(ruta oculta)*
+
+## Sitios
+- **Ruta Base:** `/sites`
+- **Rutas Secundarias:**
+  - **Agregar Sitio:** `/sites/register`
+  - **Buscar Sitios:** `/sites/search`
+  - **Editar Sitio:** `/sites/edit/:id` *(ruta oculta)*
+  - **Configuración de Sitio:** `/sites/configuration/:id` *(ruta oculta)*
+  - **Puntos de Control:**
+    - `/sites/checkpoints/:id/:checkpoint` *(ruta oculta)*
+    - `/sites/create-checkpoint/:id` *(ruta oculta)*
+    - `/sites/checkpoints/:id/` *(ruta oculta)*
+  - **Clientes:** `/clients`
+  - **Rondas:** `/rounds/view`
+  - **Solicitudes de Descanso:** `/sites/day-off`
+
+## Horarios
+- **Ruta Base:** `/schedules`
+- **Ruta Secundaria:**
+  - **Asignación de Horarios:** `/schedules/assign`
+
+## Nómina
+- **Ruta Base:** `/payroll`
+- **Ruta Secundaria:**
+  - **Ver Nómina:** `/payroll/view`
+
+## Patrullaje
+- **Ruta Base:** `/patrol`
+- **Ruta Secundaria:**
+  - **Ver Patrullaje:** `/patrol/view`
+
+## Puntos de Control
+- **Ruta Base:** `/checkpoints`
+- **Ruta Secundaria:**
+  - **Ver Puntos de Control:** `/checkpoints/view`
+
+## Chat
+- **Ruta Base:** `/chat`
+- **Ruta Secundaria:**
+  - **Chat:** `/chat/view`
+
+## Reportes
+- **Ruta Base:** `/reports`
+- **Rutas Secundarias:**
+  - **Reloj:** `/clock/view`
+  - **Reporte de Incidentes:** `/reports/view`
+  - **Editar Reporte:** `/reports/edit/:id` *(ruta oculta)*
+  - **Detalles del Reporte:** `/reports/view/detail/:id` *(ruta oculta)*
+  - **Tracking:** `/tracking/view`
+  - **Reporte DAR:** `/reports/dar`
+
+## Configuración
+- **Ruta Base:** `/settings`
+- **Rutas Secundarias:**
+  - **Catálogo de Ubicaciones:** `/where`
+  - **Tipo de Incidente:** `/report/category`
+  - **Normas de Descanso:** `/break_rules`
+
+> **Nota:** Las rutas del panel están protegidas y pueden requerir permisos específicos (basados en roles de usuario) para acceder a cada sección. Esta estructura modular facilita la gestión integral de usuarios, sitios, horarios, nóminas, patrullajes, reportes y configuraciones dentro de 4Patrol.
+
+Explora cada sección para descubrir todas las funcionalidades que 4Patrol ofrece a las empresas de seguridad.
